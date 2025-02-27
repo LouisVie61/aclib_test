@@ -143,6 +143,7 @@ logging.level.org.springframework.security=DEBUG
 #Connect DATABASED
 
 spring.datasource.url=jdbc:mysql://localhost:3306/DataOfWeb1
+
 spring.datasource.username=root
 
 spring.datasource.password=123456
