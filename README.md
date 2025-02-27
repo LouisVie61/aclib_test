@@ -135,4 +135,26 @@ and an email will be sent to all adminstrators. From that, the admintrator can d
 1. Implement advanced user analytics.
 2. Batch process overdue loans.
 
+## Sorry because file applicant.properties contains the private information so I will type the content here and you can use to make another applicant.properties in resources folder
+
+spring.application.name=aclib_deploy
+logging.level.org.springframework.security=DEBUG
+
+#Connect DATABASED
+spring.datasource.url=jdbc:mysql://localhost:3306/DataOfWeb1
+spring.datasource.username=root
+spring.datasource.password=123456
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+#Sending email when overdue
+spring.mail.host=smtp.gmail.com
+spring.mail.port=<your_port>
+spring.mail.username=<your_email>
+spring.mail.password=<your_password>
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.starttls.enable=true
+spring.mail.properties.mail.smtp.ssl.trust=smtp.gmail.com
+
 ## Feel free to adjust this based on your specific project details!
