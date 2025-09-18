@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 public class GoogleService {
     private static final String GOOGLE_BOOKS_API_URL_1 = "https://www.googleapis.com/books/v1/volumes?q=";
     private static final String GOOGLE_BOOKS_API_URL_2 = "https://www.googleapis.com/books/v1/volumes/";
-    private static final String API_KEY = "your_google_api_key";
+    private static final String API_KEY = "AIzaSyD9foUUvM-Qo_0OwEPgE6vOY-Mqvpvwi8U";
     private static final String resultCount = "&startIndex=0&maxResults=40";
     private static final String resultCount1 = "&startIndex=0&maxResults=20";
     private static final String default_thumbnail = "https://st.quantrimang.com/photos/image/2018/12/18/Anh-Sorry-Pix-2.jpg";
@@ -91,7 +91,6 @@ public class GoogleService {
             return null;
         } catch (HttpServerErrorException e) {
             if (e.getStatusCode() == HttpStatus.SERVICE_UNAVAILABLE) {
-                // log if 503 occurs
                 System.out.println("503 Service Unavailable. Retrying...");
             }
             throw e;
