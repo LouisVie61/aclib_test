@@ -1,10 +1,15 @@
 package com.aclib.aclib_deploy.Entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "aclib_loans")
+@Getter
+@Setter
 public class Loans {
 
     @Id
@@ -52,85 +57,4 @@ public class Loans {
     private int renewalCount = 0;
 
     private LocalDateTime notificationSentDate;
-
-    //getter and setter
-    public long getLoansId() {
-        return loansId;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Book getBook() {
-        return book;
-    }
-
-    public void setBook(Book book) {
-        this.book = book;
-    }
-
-    public String getIdSelfLink() { return idSelfLink; }
-
-    public void setIdSelfLink(String idSelfLink) { this.idSelfLink = idSelfLink; }
-
-    public String getBookTitle() {
-        return bookTitle;
-    }
-
-    public void setBookTitle(String bookTitle) {
-        this.bookTitle = bookTitle;
-    }
-
-    public LocalDateTime getBorrowDate() {
-        return borrowDate;
-    }
-
-    public void setBorrowDate(LocalDateTime borrowDate) {
-        this.borrowDate = borrowDate;
-    }
-
-    public LocalDateTime getDueDate() {
-        return dueDate;
-    }
-
-    public void setDueDate(LocalDateTime dueDate) {
-        this.dueDate = dueDate;
-    }
-
-    public LocalDateTime getReturnDate() {
-        return returnDate;
-    }
-
-    public void setReturnDate(LocalDateTime returnDate) {
-        this.returnDate = returnDate;
-    }
-
-    public int getRenewalCount() {
-        return renewalCount;
-    }
-
-    public void setRenewalCount(int renewalCount) {
-        this.renewalCount = renewalCount;
-    }
-
-    public LocalDateTime getNotificationSentDate() {
-        return notificationSentDate;
-    }
-
-    public void setNotificationSentDate(LocalDateTime notificationSentDate) {
-        this.notificationSentDate = notificationSentDate;
-    }
-
-    public LoanStatus getLoanStatus() {
-        return loanStatus;
-    }
-
-    public void setLoanStatus(LoanStatus loanStatus) {
-        this.loanStatus = loanStatus;
-    }
 }

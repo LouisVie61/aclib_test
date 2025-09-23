@@ -5,6 +5,7 @@ import com.aclib.aclib_deploy.DTO.BookDTO;
 import com.aclib.aclib_deploy.Exception.BookNotFoundException;
 import com.aclib.aclib_deploy.Repository.BookRepository;
 import com.aclib.aclib_deploy.ThirdPartyService.GoogleService;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@Transactional
 public class BookService {
     @Autowired
     private BookRepository bookRepository;

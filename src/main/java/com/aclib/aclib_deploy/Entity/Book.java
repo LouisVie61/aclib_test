@@ -1,11 +1,16 @@
 package com.aclib.aclib_deploy.Entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 
 @Entity
-@Table(name = "aclib_book")
+@Table(name = "aclib_book",
+        uniqueConstraints = @UniqueConstraint(columnNames = "id_selfLink"))
+@Getter
+@Setter
 public class Book {
 
     @Id
@@ -41,7 +46,7 @@ public class Book {
     @Column
     private String category;
 
-    @Column
+    @Column(columnDefinition = "TEXT")
     private String description;
 
     @Column
@@ -57,81 +62,5 @@ public class Book {
     protected void onCreate() {
         addedDate = new Date();
     }
-
-    //getter and setter
-
-    public long getId() { return id;}
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getIdSelfLink() {
-        return idSelfLink;
-    }
-
-    public void setIdSelfLink(String idSelfLink) {
-        this.idSelfLink = idSelfLink;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public String getPublishDate() {
-        return publishDate;
-    }
-
-    public void setPublishDate(String publishDate) {
-        this.publishDate = publishDate;
-    }
-
-    public String getThumbnail() {
-        return thumbnail;
-    }
-
-    public void setThumbnail(String thumbnail) {
-        this.thumbnail = thumbnail;
-    }
-
-    public int getCopy() {
-        return copy;
-    }
-
-    public void setCopy(int copy) {
-        this.copy = copy;
-    }
-
-    public String getPublisher() {
-        return publisher;
-    }
-
-    public void setPublisher(String publisher) {
-        this.publisher = publisher;
-    }
-
-    public String getSelfLink() {
-        return selfLink;
-    }
-
-    public void setSelfLink(String selfLink) {
-        this.selfLink = selfLink;
-    }
-
-    public String getCategory() {return category; }
-
-    public void setCategory(String category) {this.category = category; }
 }
 
