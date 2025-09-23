@@ -33,9 +33,9 @@ public class SecurityConfig {
                 .authorizeHttpRequests((authorize) -> authorize
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .requestMatchers("/login", "/register", "/api/book/**", "/verifying-otp", "/resenting-otp").permitAll()
-                        .requestMatchers("/api/loan/**", "/mls_user/**").hasAnyRole("ADMIN", "USER") // new added
+                        .requestMatchers("/api/loan/**", "/mls_user/**").hasAnyRole("ADMIN", "USER")
                         .requestMatchers("/admin/**", "/admin/book/**").hasRole("ADMIN")
-                        .requestMatchers("/auth/user").authenticated() // new line
+                        .requestMatchers("/auth/user").authenticated()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(sessionManagement -> sessionManagement
@@ -50,7 +50,6 @@ public class SecurityConfig {
                         .deleteCookies("JSESSIONID")
                         .permitAll()
                 );
-
 
         return http.build();
     }

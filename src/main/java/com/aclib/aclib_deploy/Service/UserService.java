@@ -8,6 +8,7 @@ import com.aclib.aclib_deploy.DTO.UserDTO;
 import com.aclib.aclib_deploy.Repository.LoanRepository;
 import com.aclib.aclib_deploy.Repository.UserRepository;
 import com.aclib.aclib_deploy.ThirdPartyService.EmailAsyncService;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -26,6 +27,7 @@ import java.util.stream.Collectors;
 
 @Service
 @EnableTransactionManagement
+@Transactional
 public class
 UserService implements UserDetailsService {
 

@@ -11,6 +11,7 @@ import com.aclib.aclib_deploy.Repository.LoanRepository;
 import com.aclib.aclib_deploy.Repository.UserRepository;
 import com.aclib.aclib_deploy.ThirdPartyService.EmailAsyncService;
 import com.aclib.aclib_deploy.ThirdPartyService.GoogleService;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -50,6 +51,7 @@ public class AdminService {
         bookRepository.delete(book.get());
     }
 
+    @Transactional
     public void updateBookCopy(String bookId, int newCopy) {
         Book book = bookRepository.findByIdSelfLink(bookId);
 
